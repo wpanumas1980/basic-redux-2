@@ -1,12 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 function CounterDisplay({ctr}) {
-    
     return (
         <>
             <div style={{
                 backgroundColor: '#385898',
-                display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontWeight: 'bold',
@@ -14,7 +12,8 @@ function CounterDisplay({ctr}) {
                 borderRadius: '5px 5px 0 0 ',
                 width: '350px',
                 height: '200px',
-                margin: '0 auto'
+                margin: '0 auto',
+                display:'flex'
             }}>
                 <h1 style={{ fontSize: "4rem", color: 'wheat' }}>{ctr}</h1>
             </div>
@@ -61,7 +60,7 @@ function CounterDisplay({ctr}) {
 }
 const mapStateToprops = state =>{
     return{
-        ctr:state.counter
+        ctr:state.ctrCombine.counter
     }
 }
 

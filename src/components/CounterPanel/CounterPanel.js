@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { plus, descrement, increment, sub } from '../../store/action';
 import "./counter.css";
 function CounterPanel({onCrementCounter,deCrementCounter, addCounter,subCounter}) {
 
@@ -15,10 +16,10 @@ function CounterPanel({onCrementCounter,deCrementCounter, addCounter,subCounter}
 
 const mapDispatchToProps = dispatch => {
     return {
-        onCrementCounter: () => dispatch({ type: "INCREMENT" }),
-        deCrementCounter: () => dispatch({ type: "DECREASE" }),
-        addCounter: (value) => dispatch({ type: "ADD",value }),
-        subCounter: (value) => dispatch({ type: "SUB",value }),
+        onCrementCounter: () => dispatch(increment()),
+        deCrementCounter: () => dispatch(descrement()),
+        addCounter: (value) => dispatch(plus(value)),
+        subCounter: (value) => dispatch(sub(value)),
     };
 };
 
